@@ -1,10 +1,11 @@
 module telegram-bot
 
-go 1.24
+go 1.23
 
 require (
 	github.com/go-telegram-bot-api/telegram-bot-api/v5 v5.5.1
 	github.com/lib/pq v1.10.9
+	golang.org/x/text v0.23.0
 	gonum.org/v1/plot v0.16.0
 )
 
@@ -18,5 +19,4 @@ require (
 	github.com/golang/freetype v0.0.0-20170609003504-e2365dfdc4a0 // indirect
 	github.com/pmezard/go-difflib v1.0.0 // indirect
 	golang.org/x/image v0.25.0 // indirect
-	golang.org/x/text v0.23.0 // indirect
 )
