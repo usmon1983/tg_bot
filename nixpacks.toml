@@ -1,8 +1,5 @@
-[phases.setup]
-nixPkgs = ["go_1_23"]
-
 [phases.build]
-cmds = ["go build -o out"]
+cmds = ["go build -o app"]
 
-[phases.start]
-cmd = "./out"
+[start]
+cmd = "./app"
