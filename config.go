@@ -1,7 +1,8 @@
 package main
 
 import (
-    "os"
+	"log"
+	"os"
 )
 
 const (
@@ -21,5 +22,6 @@ func init() {
         //PostgresConnString = "host=localhost port=5432 user=adm password=adm dbname=bot sslmode=disable"
 		PostgresConnString = "host=localhost port=5432 user=app password=pass dbname=expensesbot sslmode=disable"
     }
+	log.Printf("PostgresConnString = %s\n", PostgresConnString)
 }
 
