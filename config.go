@@ -5,24 +5,21 @@ import (
 	"os"
 )
 
-const (
-	TelegramBotToken = "8028673613:AAGXhTldnMKzEOaCaTm_eCqCuDWyygxzMPk"
-	//WeatherAPIKey    = "ВАШ_OPENWEATHERMAP_API_KEY"
-	//PostgresConnString = "host=localhost port=5432 user=app password=pass dbname=expensesbot sslmode=disable"
+var (
+	TelegramBotToken string
+	PostgresConnString string
 )
 
-//package main
-
-var PostgresConnString string
-
 func init() {
+	TelegramBotToken = os.Getenv("TELEGRAM_BOT_TOKEN")
+    if TelegramBotToken == "" {
+        log.Fatal("TELEGRAM_BOT_TOKEN is not set")
+    }
+
     PostgresConnString = os.Getenv("DATABASE_URL")
     if PostgresConnString == "" {
-        // fallback на локальный конфиг для разработки
-        //PostgresConnString = "host=localhost port=5432 user=adm password=adm dbname=bot sslmode=disable"
-		//PostgresConnString = "host=localhost port=5432 user=app password=pass dbname=expensesbot sslmode=disable"
-		PostgresConnString = "postgresql://postgres:lEOvAjqidGuKURszgSSNbxzXieybpCSi@switchyard.proxy.rlwy.net:58510/railway"
+		log.Fatal("DATABASE_URL is not set")
     }
-	log.Printf("PostgresConnString = %s\n", PostgresConnString)
+	log.Printf("Config loaded: TelegramBotToken=*****, DB=****")
 }
 

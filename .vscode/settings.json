@@ -9,6 +9,16 @@
             "database": "expensesbot",
             "username": "app",
             "password": "pass"
+        },
+        {
+            "previewLimit": 50,
+            "server": "switchyard.proxy.rlwy.net",
+            "port": 58510,
+            "driver": "PostgreSQL",
+            "name": "railway",
+            "database": "railway",
+            "username": "postgres",
+            "password": "lEOvAjqidGuKURszgSSNbxzXieybpCSi"
         }
     ]
 }
