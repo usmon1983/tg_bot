@@ -20,7 +20,8 @@ func init() {
     if PostgresConnString == "" {
         // fallback на локальный конфиг для разработки
         //PostgresConnString = "host=localhost port=5432 user=adm password=adm dbname=bot sslmode=disable"
-		PostgresConnString = "host=localhost port=5432 user=app password=pass dbname=expensesbot sslmode=disable"
+		//PostgresConnString = "host=localhost port=5432 user=app password=pass dbname=expensesbot sslmode=disable"
+		PostgresConnString = "postgresql://postgres:lEOvAjqidGuKURszgSSNbxzXieybpCSi@switchyard.proxy.rlwy.net:58510/railway"
     }
 	log.Printf("PostgresConnString = %s\n", PostgresConnString)
 }
