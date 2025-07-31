@@ -9,4 +9,4 @@ COPY . .
 
 RUN go build -o app
 
-CMD ["./app"]
+CMD ./app
