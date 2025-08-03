@@ -2,13 +2,10 @@ package main
 
 import (
 	"log"
-	"os"
-
 	tgbotapi "github.com/go-telegram-bot-api/telegram-bot-api/v5"
 )
 
 func main() {
-	log.Println("DATABASE_URL =", os.Getenv("DATABASE_URL"))
 	err := InitDB()
 	if err != nil {
 		log.Fatal("Ошибка при инициализации базы:", err)
