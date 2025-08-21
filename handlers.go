@@ -87,7 +87,17 @@ func handleUpdate(bot *tgbotapi.BotAPI, update tgbotapi.Update, keyboard tgbotap
 				ratesMap["CNY"],
 			)
 		}
-
+	case "🌦️ Прогноз погоды":
+		sendCityKeyboard(bot, msg.ChatID)
+		//wheatherJSON := GetWheatherFromJSON()
+		//msg.Text = wheatherJSON
+	case "Dushanbe", "Khujand", "Kurgan-Tyube", "Kulyab", "Khorog", "Hisor", "Gharm":
+            weather := GetWheatherFromJSON(text)
+			chatID := update.Message.Chat.ID
+            msg := tgbotapi.NewMessage(chatID, weather)
+            // Убираем клавиатуру после выбора
+            msg.ReplyMarkup = tgbotapi.NewRemoveKeyboard(true)
+            bot.Send(msg)
 	default:
 		// Пытаемся понять, это ли расход: сумма категория
 		parts := strings.Fields(text)

@@ -31,5 +31,4 @@ func init() {
 	if PostgresConnString == "" {
 		log.Fatal("DATABASE_URL is not set")
 	}
-	log.Printf("Config loaded: TelegramBotToken=*****, DB=*****")
 }
