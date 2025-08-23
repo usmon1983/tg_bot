@@ -3,13 +3,13 @@ package main
 import (
 	"log"
 	"os"
-
 	"github.com/joho/godotenv"
 )
 
 var (
-	TelegramBotToken   string
+	TelegramBotToken string
 	PostgresConnString string
+	WheatherApiKey string
 )
 
 func init() {
@@ -30,5 +30,10 @@ func init() {
 	PostgresConnString = os.Getenv("DATABASE_URL")
 	if PostgresConnString == "" {
 		log.Fatal("DATABASE_URL is not set")
+	}
+
+	WheatherApiKey = os.Getenv("WHEATHER_API_KEY")
+	if WheatherApiKey == "" {
+		log.Fatal("WHEATHER_API_KEY is not set")
 	}
 }

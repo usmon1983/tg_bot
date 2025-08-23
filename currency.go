@@ -5,14 +5,8 @@ import (
 	"fmt"
 	"io"
 	"time"
-
-	//"log"
-
-	//"io"
 	"net/http"
-	//"strconv"
 	"strings"
-
 	"golang.org/x/text/encoding/charmap"
 	"golang.org/x/text/transform"
 )
